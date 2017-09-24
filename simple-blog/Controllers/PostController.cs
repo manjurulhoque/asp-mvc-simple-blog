@@ -38,10 +38,37 @@ namespace simple_blog.Controllers
             {
                 _context.Posts.Add(post);
             }
+            else
+            {
+                var postIndb = _context.Posts.Single(m => m.id == post.id);
+
+                postIndb.title = post.title;
+                postIndb.description = post.description;
+            }
 
             _context.SaveChanges();
 
             return RedirectToAction("Index", "Post");
+        }
+
+        public ActionResult Details(int id)
+        {
+            var post = _context.Posts.SingleOrDefault(m => m.id == id);
+            if (post == null)
+            {
+                return HttpNotFound();
+            }
+            return View(post);
+        }
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var post = _context.Posts.SingleOrDefault(c => c.id == id);
+
+            if (post == null)
+                return HttpNotFound();
+
+            return View(post);
         }
     }
 }

@@ -1,0 +1,12 @@
+﻿@model simple_blog.Models.Post
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Details</h2>
+
+<h1>Title: @Model.title</h1>
+<p>Description: @Model.description</p>
+
+<td>@Html.ActionLink("Edit", "Edit", "Post", new { id = Model.id }, new { @class = "btn btn-success" })</td>
