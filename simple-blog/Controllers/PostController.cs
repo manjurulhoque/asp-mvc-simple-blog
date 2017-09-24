@@ -45,6 +45,7 @@ namespace simple_blog.Controllers
 
                 postIndb.title = post.title;
                 postIndb.description = post.description;
+                postIndb.updated_at = DateTime.Now;
             }
 
             _context.SaveChanges();

@@ -1,4 +1,5 @@
 ﻿@model simple_blog.Models.Post
+@using simple_blog.CustomHelpers
 
 @{
     ViewBag.Title = "Details";
@@ -8,6 +9,10 @@
 
 <h1>Title: @Model.title</h1>
 <p>Description: @Model.description</p>
+@if (Model.created_at != null)
+{
+    <h3>Created at: @Html.Timeago(Model.created_at)</h3>
+}
 
 @Html.ActionLink("Edit", "Edit", "Post", new { id = Model.id }, new { @class = "btn btn-success" })
 @using (Html.BeginForm("Delete", "Post"))
