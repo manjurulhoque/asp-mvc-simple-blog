@@ -1,0 +1,19 @@
+﻿@model IEnumerable<simple_blog.Models.Post>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>All Posts</h2>
+@foreach (var post in Model)
+{
+<article>
+    <div class="row">
+        <div class="col-sm-6 col-md-12">
+            <h4>@post.title</h4>
+            <p>@post.description</p>
+        </div>
+    </div>
+</article>
+}
