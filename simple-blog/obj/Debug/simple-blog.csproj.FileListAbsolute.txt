@@ -69,3 +69,5 @@ E:\ASP.NET\simple-blog\simple-blog\bin\Microsoft.AI.Web.xml
 E:\ASP.NET\simple-blog\simple-blog\obj\Debug\simple-blog.csprojResolveAssemblyReference.cache
 E:\ASP.NET\simple-blog\simple-blog\obj\Debug\simple-blog.dll
 E:\ASP.NET\simple-blog\simple-blog\obj\Debug\simple-blog.pdb
+E:\ASP.NET\simple-blog\simple-blog\obj\Debug\simple_blog.Migrations.InitialCreate.resources
+E:\ASP.NET\simple-blog\simple-blog\obj\Debug\simple-blog.csproj.GenerateResource.Cache
