@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -69,6 +70,24 @@ namespace simple_blog.Controllers
                 return HttpNotFound();
 
             return View(post);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id)
+        {
+            var post = _context.Posts.SingleOrDefault(c => c.id == id);
+            if (post == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                _context.Posts.Remove(post);
+            }
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Post");
         }
     }
 }

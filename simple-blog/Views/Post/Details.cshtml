@@ -9,4 +9,10 @@
 <h1>Title: @Model.title</h1>
 <p>Description: @Model.description</p>
 
-<td>@Html.ActionLink("Edit", "Edit", "Post", new { id = Model.id }, new { @class = "btn btn-success" })</td>
+@Html.ActionLink("Edit", "Edit", "Post", new { id = Model.id }, new { @class = "btn btn-success" })
+@using (Html.BeginForm("Delete", "Post"))
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("id", new { id = Model.id })
+    <button type="submit" class="btn btn-danger">Delete</button>
+}
