@@ -9,5 +9,6 @@ namespace simple_blog.Models
     public class BlogDb : DbContext
     {
         public DbSet<Post> Posts { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }

@@ -147,6 +147,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="CustomHelpers\CustomHelpers.cs" />
@@ -161,10 +162,16 @@
     <Compile Include="Migrations\201709242013023_AddedTimestampsToPost.Designer.cs">
       <DependentUpon>201709242013023_AddedTimestampsToPost.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709251441027_AddedCategoryToPost.cs" />
+    <Compile Include="Migrations\201709251441027_AddedCategoryToPost.Designer.cs">
+      <DependentUpon>201709251441027_AddedCategoryToPost.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BlogDb.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\PostViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -207,6 +214,7 @@
     <Content Include="Views\Post\New.cshtml" />
     <Content Include="Views\Post\Details.cshtml" />
     <Content Include="Views\Post\Edit.cshtml" />
+    <Content Include="Views\Category\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -232,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709242013023_AddedTimestampsToPost.resx">
       <DependentUpon>201709242013023_AddedTimestampsToPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709251441027_AddedCategoryToPost.resx">
+      <DependentUpon>201709251441027_AddedCategoryToPost.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

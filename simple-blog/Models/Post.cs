@@ -14,6 +14,10 @@ namespace simple_blog.Models
         public DateTime? created_at { get; set; }
         public DateTime? updated_at { get; set; }
 
+        public Category Category { get; set; }
+        [Required]
+        public int CategoryId { get; set; }
+
         public Post()
         {
             created_at = DateTime.Now;

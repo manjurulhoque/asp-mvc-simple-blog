@@ -1,0 +1,21 @@
+﻿@model simple_blog.Models.Category
+
+@{
+    ViewBag.Title = "New Category";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Category</h2>
+
+@using (Html.BeginForm("Save", "Category"))
+{
+    @Html.ValidationSummary()
+    <div class="form-group">
+        @Html.LabelFor(c => c.name)
+        @Html.TextBoxFor(m => m.name, new { @class = "form-control" })
+    </div>
+
+    @Html.HiddenFor(m => m.id)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-success">Create Category</button>
+}

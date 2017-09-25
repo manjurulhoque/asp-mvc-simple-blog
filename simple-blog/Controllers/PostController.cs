@@ -1,9 +1,11 @@
 ﻿using simple_blog.Models;
+using simple_blog.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Data.Entity;
 using System.Web.Mvc;
 
 namespace simple_blog.Controllers
@@ -23,13 +25,18 @@ namespace simple_blog.Controllers
         // GET: Post
         public ActionResult Index()
         {
-            var posts = _context.Posts.ToList();
+            var posts = _context.Posts.Include(a => a.Category).ToList();
             return View(posts);
         }
         
         public ActionResult New()
         {
-            return View();
+            var categories = _context.Categories.ToList();
+            var viewModel = new PostViewModel
+            {
+                Categories = categories
+            };
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -45,6 +52,7 @@ namespace simple_blog.Controllers
 
                 postIndb.title = post.title;
                 postIndb.description = post.description;
+                postIndb.CategoryId = post.CategoryId;
                 postIndb.updated_at = DateTime.Now;
             }
 
@@ -70,7 +78,12 @@ namespace simple_blog.Controllers
             if (post == null)
                 return HttpNotFound();
 
-            return View(post);
+            var viewModel = new PostViewModel(post)
+            {
+                Categories = _context.Categories.ToList()
+            };
+
+            return View(viewModel);
         }
 
         [HttpPost]

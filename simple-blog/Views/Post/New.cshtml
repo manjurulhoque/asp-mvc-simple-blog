@@ -1,4 +1,4 @@
-﻿@model simple_blog.Models.Post
+﻿@model simple_blog.ViewModels.PostViewModel
 
 @{
     ViewBag.Title = "New";
@@ -17,6 +17,10 @@
     <div class="form-group">
         @Html.LabelFor(c => c.description)
         @Html.TextAreaFor(m => m.description, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.CategoryId)
+        @Html.DropDownListFor(m => m.CategoryId, new SelectList(Model.Categories, "Id", "Name"), "Select Category", new { @class = "form-control" })
     </div>
 
     @Html.HiddenFor(m => m.id)

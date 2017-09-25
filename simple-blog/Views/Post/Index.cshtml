@@ -13,6 +13,7 @@
         <div class="col-sm-6 col-md-12">
             <h4>@post.title</h4>
             <p>@post.description</p>
+            <h4>Category: @post.Category.name</h4>
             @Html.ActionLink("Details", "Details", "Post", new { id = post.id }, new { @class = "btn btn-primary" })
         </div>
     </div>
