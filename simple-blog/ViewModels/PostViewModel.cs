@@ -15,7 +15,7 @@ namespace simple_blog.ViewModels
         public int CategoryId { get; set; }
 
         public string title { get; set; }
-
+        public byte[] image { get; set; }
         public string description { get; set; }
 
         public PostViewModel()

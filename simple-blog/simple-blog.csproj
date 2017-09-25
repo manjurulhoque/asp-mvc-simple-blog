@@ -166,6 +166,10 @@
     <Compile Include="Migrations\201709251441027_AddedCategoryToPost.Designer.cs">
       <DependentUpon>201709251441027_AddedCategoryToPost.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709251713123_AddImageToPost.cs" />
+    <Compile Include="Migrations\201709251713123_AddImageToPost.Designer.cs">
+      <DependentUpon>201709251713123_AddImageToPost.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BlogDb.cs" />
     <Compile Include="Models\Category.cs" />
@@ -243,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709251441027_AddedCategoryToPost.resx">
       <DependentUpon>201709251441027_AddedCategoryToPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709251713123_AddImageToPost.resx">
+      <DependentUpon>201709251713123_AddImageToPost.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

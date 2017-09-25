@@ -73,3 +73,4 @@ E:\ASP.NET\simple-blog\simple-blog\obj\Debug\simple_blog.Migrations.InitialCreat
 E:\ASP.NET\simple-blog\simple-blog\obj\Debug\simple-blog.csproj.GenerateResource.Cache
 E:\ASP.NET\simple-blog\simple-blog\obj\Debug\simple_blog.Migrations.AddedTimestampsToPost.resources
 E:\ASP.NET\simple-blog\simple-blog\obj\Debug\simple_blog.Migrations.AddedCategoryToPost.resources
+E:\ASP.NET\simple-blog\simple-blog\obj\Debug\simple_blog.Migrations.AddImageToPost.resources

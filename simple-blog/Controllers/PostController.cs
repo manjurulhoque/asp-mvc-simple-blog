@@ -40,10 +40,16 @@ namespace simple_blog.Controllers
         }
 
         [HttpPost]
-        public ActionResult Save(Post post)
+        public ActionResult Save([Bind(Exclude = "Image")]Post post, HttpPostedFileBase image)
         {
             if (post.id == 0)
             {
+                if(image != null)
+                {
+                    byte[] newImage = new byte[image.ContentLength];
+                    int readresult = image.InputStream.Read(newImage, 0, (int)image.ContentLength);
+                    post.image = newImage;
+                }
                 _context.Posts.Add(post);
             }
             else
